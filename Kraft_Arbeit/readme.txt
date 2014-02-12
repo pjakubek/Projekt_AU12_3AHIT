@@ -1,0 +1,1 @@
+Hier sind die Abgaben von Kraft.
