@@ -47,7 +47,6 @@ public class MonoalphabeticCipher implements Cipher {
 				case 'ß':
 					txt[i] = secret[29];
 					break;
-				default:
 				}
 			}
 		}
@@ -59,7 +58,7 @@ public class MonoalphabeticCipher implements Cipher {
 	 */
 	@Override
 	public String decrypt(String text) {
-		char a[] = abc.toLowerCase().toCharArray();
+		char a[] = abc.toCharArray();
 		char txt[] = text.toLowerCase().toCharArray();
 		for (int i = 0; i < txt.length; i++) {
 			if (txt[i] >= 'a' && txt[i] <= 'z' || txt[i] == 'ä' || txt[i] == 'ö' || txt[i] == 'ü' || txt[i] == 'ß') {
