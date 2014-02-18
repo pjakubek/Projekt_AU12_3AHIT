@@ -1,5 +1,11 @@
 package JakubekJevticKraftt;
 
+/**
+ * SubstitutionCipher
+ * 
+ * @author Kraft
+ * @version 1.0
+ */
 public class SubstitutionCipher extends MonoalphabeticCipher {
 
 	public SubstitutionCipher(String secretalphabet) {
