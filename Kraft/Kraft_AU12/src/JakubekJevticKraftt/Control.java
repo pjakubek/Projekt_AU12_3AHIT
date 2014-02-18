@@ -5,6 +5,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.UIManager;
 
+/**
+ * Control
+ * 
+ * @author Jakubek
+ * @version 1.0
+ *
+ */
 public class Control implements ActionListener {
 	private static final String COMBOBOX = null;
 	private static final String COMBO = null;
@@ -17,10 +24,6 @@ public class Control implements ActionListener {
 	
 	public Control() {
 		this.v = new View(this);
-		this.mono = new MonoalphabeticCipher();
-		this.sc = new ShiftCipher(0);
-		this.subst = new SubstitutionCipher("cdefghijklmnopqrstuvwxyzab");
-		this.kc = new KeywordCipher("Crypt");
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -31,18 +34,8 @@ public class Control implements ActionListener {
 			this.v.decrypt();
 		}
 		if(this.v.isCombo(e)) {
-			System.out.println("1");
+			//System.out.println("1");
      }
 			
 		}
-	
-	
-	public static void main(String[]args){
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		Control c = new Control();
-	}
 }

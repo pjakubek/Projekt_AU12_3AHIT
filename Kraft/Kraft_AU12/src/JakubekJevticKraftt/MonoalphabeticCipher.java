@@ -1,6 +1,7 @@
 package JakubekJevticKraftt;
 
 import java.util.HashSet;
+import java.util.Locale;
 
 /**
  * Super Cipher
@@ -40,14 +41,15 @@ public class MonoalphabeticCipher implements Cipher {
 	 */
 	public void setSecretAlphabet(String secretAlphabet)
 			throws IllegalArgumentException {
-		secretAlphabet = secretAlphabet.toLowerCase();
+		this.secretAlphabet = secretAlphabet.toLowerCase(Locale.GERMAN);
+		String kontroll = "abcdefghijklmnopqrstuvwxyzäöüß";
 		
 		if (secretAlphabet == null) {
 			throw new IllegalArgumentException("Secret Alphabet benötigt!");
 		}
 		
 		for (int i = 0; i < secretAlphabet.length(); i++) {
-			if (!abc.contains("" + secretAlphabet.charAt(i))) {
+			if (!kontroll.contains("" + secretAlphabet.charAt(i))) {
 				throw new IllegalArgumentException(
 						"Nicht zulässige Buchstaben!");
 			}
@@ -55,23 +57,20 @@ public class MonoalphabeticCipher implements Cipher {
 		
 		if (secretAlphabet.length() > 30) {
 			throw new IllegalArgumentException("Zu viele Buchstaben!");
-		}
+	}
 
-		if (secretAlphabet.length() < 30) {
-			throw new IllegalArgumentException("Zu wenige Buchstaben!");
-		}
 
 		HashSet<Character> check = new HashSet<Character>();
 		for (int i = 0; i < secretAlphabet.length(); i++) {
 			check.add(secretAlphabet.charAt(i));
 		}
-		if (check.size() != 30) {
+		/*if (check.size() != 30) {
 			throw new IllegalArgumentException(
 					"Das Secret Alphabet enthält doppelte Buchstaben");
 		}
-
+		 */
 		for (int i = 0; i < secretAlphabet.length(); i++) {
-			if (!abc.contains("" + secretAlphabet.charAt(i))) {
+			if (!kontroll.contains("" + secretAlphabet.charAt(i))) {
 				throw new IllegalArgumentException(
 						"Das Secret Alphabet enthält unerlaubte Buchstaben");
 			}
@@ -140,12 +139,5 @@ public class MonoalphabeticCipher implements Cipher {
 			}
 		}
 		return String.valueOf(txt);
-	}
-
-	public static void main(String[] args) {
-		Cipher c = new SubstitutionCipher("dbcefghilkjmnoxpqrstuvwyzäöüßa");
-		String en = c.encrypt("Testäöüß");
-		System.out.println(en);
-		System.out.println(c.decrypt(en));
-	}
+	}	
 }

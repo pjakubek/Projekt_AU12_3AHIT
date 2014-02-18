@@ -46,11 +46,4 @@ public class ShiftCipher extends MonoalphabeticCipher {
 		//Rückgabe des secret Alphabets
 		this.setSecretAlphabet(String.valueOf(secret));
 	}
-
-	public static void main(String[] args) {
-		Cipher c = new ShiftCipher(0);
-		String en = c.encrypt("abcdefghijklmnopqrstuvwxyzäöüß");
-		System.out.println(en);
-		System.out.println(c.decrypt(en));
-	}
 }
