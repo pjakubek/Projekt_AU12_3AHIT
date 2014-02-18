@@ -1,15 +1,12 @@
-package nachname1nachname2nachname3nachname4;
-
-import nachname1nachname2nachname3nachname4.lang.String;
+package JakubekJevticKraftt;
 
 public class SubstitutionCipher extends MonoalphabeticCipher {
 
 	public SubstitutionCipher(String secretalphabet) {
-
+		super(secretalphabet);
 	}
 
 	public void setSecretAlphabet(String secretAlphabet) {
-
+		super.setSecretAlphabet(secretAlphabet);
 	}
-
 }

@@ -1,4 +1,4 @@
-package nachname1nachname2nachname3nachname4;
+package JakubekJevticKraftt;
 
 public class ShiftCipher extends MonoalphabeticCipher {
 

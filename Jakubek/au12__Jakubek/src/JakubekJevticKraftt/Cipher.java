@@ -1,6 +1,4 @@
-package nachname1nachname2nachname3nachname4;
-
-import nachname1nachname2nachname3nachname4.lang.String;
+package JakubekJevticKraftt;
 
 public interface Cipher {
 

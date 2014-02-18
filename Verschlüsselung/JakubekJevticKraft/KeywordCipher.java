@@ -1,6 +1,6 @@
-package nachname1nachname2nachname3nachname4;
+package JakubekJevticKraft;
 
-import nachname1nachname2nachname3nachname4.lang.String;
+import JakubekJevticKraft.lang.String;
 
 public class KeywordCipher extends MonoalphabeticCipher {
 
