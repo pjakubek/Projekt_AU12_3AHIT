@@ -78,7 +78,7 @@ public class View {
 
 		//String cbitems[] = {"Substitution", "Keyword","Shift"};
 
-		this.combobox = new JComboBox(cbitems);
+		this.combobox = new JComboBox();
 		combobox.setModel(new DefaultComboBoxModel(new String[] {"Substitution", "Keyword", "Shift"}));
 		combobox.setToolTipText("Select an encryption method");
 		combobox.setBounds(226, 414, 150, 20);
@@ -152,11 +152,24 @@ public class View {
 		switch (selection) {
 
 		case 0:
-<<<<<<< HEAD:jakubek/au12__Jakubek/src/JakubekJevticKraftt/View.java
 			this.c = new SubstitutionCipher("bcdefghiklmnopqrstuvwxyzaäöüß");
-=======
-			this.c = new SubstitutionCipher("bcdefghiklmnopqrstuvwxyzaÃ¤Ã¶Ã¼ÃŸ");
->>>>>>> 31081d8093bbfdeb5c244a1c47679637929d4e4e:Jakubek/au12__Jakubek/src/JakubekJevticKraftt/View.java
+
+		case 1:
+			this.c = new ShiftCipher(2);
+
+		case 3:
+			this.c = new KeywordCipher("Hallo");
+
+		}
+
+	}
+	
+	public void decrypt() {
+		int selection = this.combobox.getSelectedIndex();
+		switch (selection) {
+
+		case 0:
+			this.c = new SubstitutionCipher("bcdefghiklmnopqrstuvwxyzaäöüß");
 
 		case 1:
 			this.c = new ShiftCipher(2);

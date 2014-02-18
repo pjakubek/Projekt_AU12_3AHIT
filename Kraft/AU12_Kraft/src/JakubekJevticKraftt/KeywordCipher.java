@@ -1,5 +1,6 @@
 package JakubekJevticKraftt;
 
+
 public class KeywordCipher extends MonoalphabeticCipher {
 
 	public KeywordCipher(String keyword) {
