@@ -6,27 +6,36 @@ import java.awt.event.ActionListener;
 import javax.swing.UIManager;
 
 public class Control implements ActionListener {
+	private static final String COMBOBOX = null;
+	private static final String COMBO = null;
 	View v;
 	MonoalphabeticCipher mono;
+	ShiftCipher sc;
 	SubstitutionCipher subst;
+	KeywordCipher kc;
 	Cipher cipher;
 	
 	public Control() {
 		this.v = new View(this);
-		this.cipher = new SubstitutionCipher("cdefghijklmnopqrstuvwxyzab");
-		
+		this.mono = new MonoalphabeticCipher();
+		this.sc = new ShiftCipher(0);
+		this.subst = new SubstitutionCipher("cdefghijklmnopqrstuvwxyzab");
+		this.kc = new KeywordCipher("Crypt");
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		if (this.v.isEncrypt(e)) {
-			this.v.decrfield.setText(cipher.encrypt(this.v.encrfield.getText()));
-			this.v.encrfield.setText("");
+			this.v.encrypt();
 		}
 		if (this.v.isDecrypt(e)) {
-			this.v.encrfield.setText(cipher.decrypt(this.v.decrfield.getText()));
-			this.v.encrfield.setText("");
+			this.v.decrypt();
 		}
-	}
+		if(this.v.isCombo(e)) {
+			System.out.println("1");
+     }
+			
+		}
+	
 	
 	public static void main(String[]args){
 		try {
